@@ -1,13 +1,13 @@
 import Header from '../components/header';
 import Image from 'next/image';
-import images from '../public/logoBotanBlanco.jpg';
+import images from '../public/botanAbuelos.jpg';
 export default function Biography() {
   return (
     <>
       <Header />
       <div className='card mgt-large py-5'>
         <div className='card-image'>
-          <figure className='image mt-6'>
+          <figure className='image is-3by4'>
             <Image src={images} alt='Placeholder image' />
           </figure>
         </div>
