@@ -4,8 +4,8 @@ import images from '../public/logoBotanBlanco.jpg';
 import 'bulma/css/bulma.css';
 import React from 'react';
 export default function Header() {
-  const imageLogo = '/../public/logoBotanNegro.jpg';
-  const [isActive, setisActive] = React.useState(false);
+  const imageLogo = images;
+  const [isActive, setIsActive] = React.useState(false);
 
   return (
     <header>
@@ -16,7 +16,7 @@ export default function Header() {
           </div>
           <a
             onClick={() => {
-              setisActive(!isActive);
+              setIsActive(!isActive);
             }}
             role='button'
             className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
