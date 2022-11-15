@@ -8,8 +8,8 @@ export default function Header() {
   const [isActive, setIsActive] = React.useState(false);
 
   return (
-    <header>
-      <nav className='navbar' role='navigation' aria-label='main navigation'>
+    <header className='mb-4'>
+      <nav className='navbar is-fixed-top ' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
           <div className='navbar-start navbar-item'>
             <Image src={imageLogo} width='112' height='28' alt={''} />
@@ -36,6 +36,9 @@ export default function Header() {
             </CustomLink>
             <CustomLink className='navbar-item' href='/about' prefetch>
               About
+            </CustomLink>
+            <CustomLink className='navbar-item' href='/biography' prefetch>
+              Biografia
             </CustomLink>
             <div className='navbar-item has-dropdown is-hoverable'>
               <div className='navbar-link'>Gallerias</div>
