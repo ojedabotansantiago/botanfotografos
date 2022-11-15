@@ -8,7 +8,7 @@ export default function HomeImage() {
   const imageLogo = images;
 
   return (
-    <section className='hero '>
+    <section className='hero is-fullheight-with-navbar'>
       <div className='hero-body'>
         <div className='container has-text-centered'>
           <div className='card'>
@@ -26,7 +26,10 @@ export default function HomeImage() {
               </div>
 
               <div className='content'>
-                Fotografia de Fernado Botan Mon. <a>Plaza de Sevilla</a>
+                Fotografia de Fernado Botan Mon. <a>Plaza de Sevilla</a>{' '}
+                <p>
+                  Ganadora del world press Photo del <time dateTime='1972-04-14'>14-04-1972</time>
+                </p>
                 <br />
                 <time dateTime='1972-04-14'>14-04-1972</time>
               </div>
