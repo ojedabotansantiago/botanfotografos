@@ -11,6 +11,9 @@ export default function Header() {
     <header>
       <nav className='navbar' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
+          <div className='navbar-start navbar-item'>
+            <Image src={imageLogo} width='112' height='28' alt={''} />
+          </div>
           <a
             onClick={() => {
               setisActive(!isActive);
@@ -28,16 +31,24 @@ export default function Header() {
         </div>
         <div id='navbarBasicExample' className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
           <div className='navbar-start'>
-            <a className='navbar-item'>
-              {' '}
-              <CustomLink href='/'>Home</CustomLink>
-            </a>
-            <a className='navbar-item'>
-              {' '}
-              <CustomLink href='/about' prefetch>
-                About
-              </CustomLink>
-            </a>
+            <CustomLink className='navbar-item' href='/'>
+              Home
+            </CustomLink>
+            <CustomLink className='navbar-item' href='/about' prefetch>
+              About
+            </CustomLink>
+            <div className='navbar-item has-dropdown is-hoverable'>
+              <div className='navbar-link'>Gallerias</div>
+
+              <div className='navbar-dropdown'>
+                <CustomLink className='navbar-item' href='/galleries/bullsGallery'>
+                  Toros
+                </CustomLink>
+                <CustomLink className='navbar-item' href='/galleries/horsesGallery'>
+                  Caballos
+                </CustomLink>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
