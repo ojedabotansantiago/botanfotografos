@@ -5,9 +5,9 @@ export default function Biography() {
   return (
     <>
       <Header />
-      <div className='card mgt-large py-5'>
+      <div className='card py-5'>
         <div className='card-image'>
-          <figure className='image is-3by4'>
+          <figure className='image is-4by3'>
             <Image src={images} alt='Placeholder image' />
           </figure>
         </div>
@@ -19,7 +19,7 @@ export default function Biography() {
               </figure>
             </div>
             <div className='media-content'>
-              <p className='title is-4'>BOTÁN FOTÓGRAFOS</p>
+              <p className='title is-4'>Botán fotografos</p>
               <p className='subtitle is-6'>@Botán</p>
             </div>
           </div>
