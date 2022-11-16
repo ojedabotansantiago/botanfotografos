@@ -11,7 +11,10 @@ export default function Home() {
       <section className='section is-fullheight-with-navbar'>
         <h1 className='title has-text-centered'>Botan Fotografos</h1>
         <h2 className='subtitle has-text-centered pt-3'>Fotografia para la historia desde 1957.</h2>
-        <HomeImage />
+
+        <div className='bd-snippet-preview'>
+          <HomeImage />
+        </div>
       </section>
     </>
   );
