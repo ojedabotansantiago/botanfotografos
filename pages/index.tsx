@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { map } from 'rxjs';
 import { getMainPicture } from '../api/homePage.service';
 import Header from '../components/header';
 import HomeImage from '../components/HomeImage';
@@ -6,6 +7,11 @@ import { ResponseImage } from '../interfaces/imageInterface';
 
 export default function Home() {
   const [mainPictureData, setMainImage] = useState<ResponseImage>();
+
+  const mainPictureDataResult = useCallback(() => {
+    return mainPictureData;
+  }, []);
+
   const mainPictureData$ = getMainPicture();
   useEffect(() => {
     mainPictureData$.subscribe({
@@ -17,7 +23,7 @@ export default function Home() {
         console.log('done');
       },
     });
-  });
+  }, [mainPictureDataResult]);
 
   return (
     <>
@@ -30,4 +36,12 @@ export default function Home() {
       </section>
     </>
   );
+}
+export async function getStaticProps() {
+  // Instead of fetching your `/api` route you can call the same
+  // function directly in `getStaticProps`
+  const data = await getMainPicture();
+  const result = JSON.parse(JSON.stringify(data));
+  // Props returned will be passed to the page component
+  return { props: { result } };
 }
