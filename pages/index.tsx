@@ -1,10 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { getMainPicture } from '../api/homePage.service';
 
 import Header from '../components/header';
 import HomeImage from '../components/HomeImage';
 
 export default function Home() {
+  const photo = getMainPicture();
   return (
     <>
       <Header />

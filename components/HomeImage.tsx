@@ -4,9 +4,9 @@ import images from '../public/logoBotanBlanco.jpg';
 import 'bulma/css/bulma.css';
 import pirueta from '../public/laPiruetaA.jpg';
 import React from 'react';
-export default function HomeImage() {
+export default function HomeImage(imageProps: any): JSX.Element {
   const imageLogo = images;
-
+  const imagePirueta = imageProps;
   return (
     <section className='hero is-fullheight-with-navbar'>
       <div className='container'>
@@ -15,7 +15,7 @@ export default function HomeImage() {
             <div className='card'>
               <div className='card-image'>
                 <figure className='image is-4by5'>
-                  <Image src={pirueta} alt='Placeholder image' width='480' height='690' />
+                  <Image src={imagePirueta} alt='Placeholder image' width='480' height='690' />
                 </figure>
               </div>
               <div className='card-content'>
