@@ -8,7 +8,7 @@ export default function HomeImage() {
   const imageLogo = images;
 
   return (
-    <section className='hero is-fullheight-with-navbar pl-6'>
+    <section className='hero is-fullheight-with-navbar'>
       <div className='container'>
         <div className='hero-body'>
           <div className='container has-text-centered'>
