@@ -16,7 +16,6 @@ export default function CustomLink({ children, href, prefetch = false, replace =
   const router = useRouter();
 
   useEffect(() => {
-    debugger;
     if (prefetch) {
       router.prefetch(href);
     }
@@ -29,10 +28,8 @@ export default function CustomLink({ children, href, prefetch = false, replace =
       onClick={(event) => {
         event.preventDefault();
         if (replace) {
-          debugger;
           router.replace(href, undefined, { shallow });
         } else {
-          debugger;
           router.push(href, undefined, { shallow });
         }
       }}
