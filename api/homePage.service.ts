@@ -1,6 +1,6 @@
 import { fromFetch } from 'rxjs/fetch';
-import { switchMap, of, catchError, Observable } from 'rxjs';
-
+import { switchMap, of, catchError } from 'rxjs';
+import { urlBase, dataHeaders } from '../const/servicesConst';
 
 export function getMainPicture() {
   const query = `query {
@@ -16,11 +16,10 @@ export function getMainPicture() {
     }
   }`;
 
-  const url = `https://graphql.contentful.com/content/v1/spaces/ra6agklz6n65/environments/master`;
   // Fetch data from external API
-  const res$ = fromFetch(url, {
+  const res$ = fromFetch(urlBase, {
     method: "POST",
-    headers: { "Content-Type": "application/json", "Authorization": "Bearer _ujsh2tGg_7EFQv15JAccqo01NOBbf6wyIFI75BB7bY" },
+    headers: dataHeaders,
     body: JSON.stringify({ query }),
   }).pipe(
     switchMap(response => {
@@ -37,12 +36,7 @@ export function getMainPicture() {
       console.error(err);
       return of({ error: true, message: err.message });
     },)
-  );;
-
-
-  debugger;
-  // Pass data to the page via props
-
+  );
   return res$;
 }
 
