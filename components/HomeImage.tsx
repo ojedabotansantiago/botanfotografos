@@ -4,9 +4,9 @@ import images from '../public/logoBotanBlanco.jpg';
 import 'bulma/css/bulma.css';
 import pirueta from '../public/laPiruetaA.jpg';
 import React from 'react';
-import { ResponseImage } from '../interfaces/imageInterface';
+import { MainPictureData } from '../interfaces/imageInterface';
 
-export default function HomeImage(imageProps: ResponseImage): JSX.Element {
+export default function HomeImage(mainPictureData: MainPictureData): JSX.Element {
   const imageLogo = images;
 
   debugger;
@@ -18,7 +18,7 @@ export default function HomeImage(imageProps: ResponseImage): JSX.Element {
             <div className='card'>
               <div className='card-image'>
                 <figure className='image is-4by5'>
-                  <Image src={imageProps.data.homeData.mainPicture.url} alt='Placeholder image' width='480' height='690' />
+                  <Image src={mainPictureData?.mainPicture?.data?.homeData?.mainPicture?.url} alt='Placeholder image' width='480' height='690' />
                 </figure>
               </div>
               <div className='card-content'>
