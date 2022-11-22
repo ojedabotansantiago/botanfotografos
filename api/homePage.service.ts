@@ -1,13 +1,13 @@
 import { fromFetch } from 'rxjs/fetch';
 import { switchMap, of, catchError, take } from 'rxjs';
 import { urlBase, dataHeaders } from '../const/servicesConst';
-import { MainPictureData } from '../interfaces/imageInterface';
+import { ErrorLoadImagData, MainPictureData } from '../interfaces/imageInterface';
 const query = `query {
   homeData(id: "2TghW1Qc8Bf6qG6gxe9OYP") {
     sys {
       id
-    }
-    mainPicture {
+    },
+    pictureData {
       url
       title
       description
@@ -43,7 +43,6 @@ export async function getMainPicture() {
 
 
 export async function getMainPictureSSR() {
-
   const res$ = await fetch(urlBase, {
     method: 'POST',
     headers: dataHeaders,
@@ -51,6 +50,11 @@ export async function getMainPictureSSR() {
   }).then((resp) => {
     debugger;
     return resp;
+  }).catch(error => {
+    return error;
   });
+  if (!res$.json) {
+    return { errors: true };
+  }
   return await res$.json();
 }

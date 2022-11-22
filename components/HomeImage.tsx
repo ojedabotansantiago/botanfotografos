@@ -18,7 +18,7 @@ export default function HomeImage(mainPictureData: MainPictureData): JSX.Element
             <div className='card'>
               <div className='card-image'>
                 <figure className='image is-4by5'>
-                  <Image src={mainPictureData?.mainPicture?.data?.homeData?.mainPicture?.url} alt='Placeholder image' width='480' height='690' />
+                  <Image src={mainPictureData?.mainPicture?.data?.homeData?.pictureData?.url} alt='Placeholder image' width='480' height='690' />
                 </figure>
               </div>
               <div className='card-content'>

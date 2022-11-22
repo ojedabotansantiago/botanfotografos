@@ -1,12 +1,13 @@
 export interface MainPictureData {
   mainPicture: {
+    errors: [];
     data:
     {
       homeData: {
         sys: {
           id: string;
         },
-        mainPicture: {
+        pictureData: {
           url: string,
           title: string,
           description: string;
@@ -16,4 +17,4 @@ export interface MainPictureData {
   };
 }
 
-export interface ErrorLoadImagData { error: boolean; message?: string; }
+export interface ErrorLoadImagData { hasError: boolean; message?: string; }
