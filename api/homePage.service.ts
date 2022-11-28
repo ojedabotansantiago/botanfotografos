@@ -7,10 +7,20 @@ const query = `query {
     sys {
       id
     },
-    pictureData {
+    mainPictureImage {
       url
       title
       description
+    },
+    galleryBullsMainPicture{
+      url
+      title
+      description
+    },
+    galleryHorsesMainPicture {
+      url
+      title
+      description      
     }
   }
 }`;
@@ -48,7 +58,6 @@ export async function getMainPictureSSR() {
     headers: dataHeaders,
     body: JSON.stringify({ query }),
   }).then((resp) => {
-    debugger;
     return resp;
   }).catch(error => {
     return error;

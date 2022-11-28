@@ -5,9 +5,8 @@ import { MainPictureData } from '../interfaces/imageInterface';
 import Image from 'next/image';
 import pirueta from '../public/loading.gif';
 
-function Home(response: MainPictureData): JSX.Element {
-  debugger;
-  const mainPictureData = response;
+function Home(propsPictureData: MainPictureData): JSX.Element {
+  const mainPictureData = propsPictureData;
   console.log(mainPictureData);
   return (
     <>
