@@ -5,7 +5,7 @@ export class ImageFactory {
   constructor(imageDataFromServer: MainPictureData) {
     this.imageDataFromServer = imageDataFromServer;
   }
-  getImageData() {
+  getMainImageData() {
     debugger;
     const imageData = {
       title: this.imageDataFromServer?.mainPicture?.data.homeData.mainPictureImage.title,
