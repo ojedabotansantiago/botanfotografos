@@ -1,18 +1,18 @@
 import Image from 'next/image';
 import 'bulma/css/bulma.css';
 import React from 'react';
-import { MainPictureData } from '../interfaces/HomeImagesInterfacesnterface';
 import { ImageFactory } from '../classes/imageFactory.Class';
 import ContentFullRichTextComponent from './contentFullRichTextComponent';
+import { MainPictureDataInterface } from '../interfaces/HomeImagesInterfaces';
 
-export default function HomeImage(imageProps: MainPictureData): JSX.Element {
+export default function HomeImage(imageProps: MainPictureDataInterface): JSX.Element {
   const imageFactory = new ImageFactory(imageProps);
   const imageData = imageFactory.getMainImageData();
   console.log('HomeImage', imageData);
   const richText = imageData?.mainPictureText?.json;
 
   return (
-    <section className='hero is-fullheight-with-navbar'>
+    <section className='hero'>
       <div className='container'>
         <div className='hero-body'>
           <div className='container has-text-centered'>

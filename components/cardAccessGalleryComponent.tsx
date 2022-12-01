@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import 'bulma/css/bulma.css';
 import { ImageFactory } from '../classes/imageFactory.Class';
-import { MainPictureDataInterface } from '../interfaces/HomeImagesInterfacesnterface';
+import { MainPictureDataInterface } from '../interfaces/HomeImagesInterfaces';
 
 export default function CardAccessGalleryComponent(imageProps: MainPictureDataInterface) {
   console.log('imageProps', imageProps);

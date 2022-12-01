@@ -1,7 +1,7 @@
 import { getMainPictureSSR } from '../api/homePage.service';
 import Header from '../components/header';
 import HomeImage from '../components/homeImage';
-import { MainPictureDataInterface } from '../interfaces/HomeImagesInterfacesnterface';
+import { MainPictureDataInterface } from '../interfaces/HomeImagesInterfaces';
 import LoadingComponent from '../components/loadingComponent';
 import CardAccessGalleryComponent from '../components/cardAccessGalleryComponent';
 import { GalleriesTypes } from '../utils/enumsGallery';

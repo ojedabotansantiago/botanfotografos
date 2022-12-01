@@ -1,4 +1,4 @@
-import { CardAccessGalleriesInterface, MainPictureDataInterface } from '../interfaces/HomeImagesInterfacesnterface';
+import { CardAccessGalleriesInterface, MainPictureDataInterface } from '../interfaces/HomeImagesInterfaces';
 import { GalleriesTypes } from '../utils/enumsGallery';
 
 export class ImageFactory {
