@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import 'bulma/css/bulma.css';
 import React from 'react';
-import { MainPictureData } from '../interfaces/imageInterface';
+import { MainPictureData } from '../interfaces/HomeImagesInterfacesnterface';
 import { ImageFactory } from '../classes/imageFactory.Class';
 import ContentFullRichTextComponent from './contentFullRichTextComponent';
 
 export default function HomeImage(imageProps: MainPictureData): JSX.Element {
   const imageFactory = new ImageFactory(imageProps);
   const imageData = imageFactory.getMainImageData();
-  const richText = imageData.mainPictureText.json;
+  console.log('HomeImage', imageData);
+  const richText = imageData?.mainPictureText?.json;
 
   return (
     <section className='hero is-fullheight-with-navbar'>

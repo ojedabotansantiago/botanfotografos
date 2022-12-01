@@ -1,4 +1,4 @@
-export interface MainPictureData {
+export interface MainPictureDataInterface {
   mainPicture: {
     errors: [];
     data:
@@ -29,6 +29,13 @@ export interface MainPictureData {
       };
     };
   };
+  configOptions?: string;
 }
 
-export interface ErrorLoadImagData { hasError: boolean; message?: string; }
+export interface ErrorLoadImagDataInterface { hasError: boolean; message?: string; }
+
+export interface CardAccessGalleriesInterface {
+  title: string;
+  url: string,
+  description: string,
+}
