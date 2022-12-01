@@ -10,7 +10,6 @@ export default function ContentFullRichTextComponent(richText: any) {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node: any, children: any) => <p>{children}</p>,
     },
-    renderText: (text: any) => text.replace('!', '?'),
   };
   return <div>{documentToReactComponents(richText, options)}</div>;
 }
