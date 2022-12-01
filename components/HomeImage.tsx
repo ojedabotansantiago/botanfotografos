@@ -6,7 +6,7 @@ import { ImageFactory } from '../classes/imageFactory.Class';
 
 export default function HomeImage(imageProps: MainPictureData): JSX.Element {
   const imageFactory = new ImageFactory(imageProps);
-  const imageData = imageFactory.getImageData();
+  const imageData = imageFactory.getMainImageData();
   debugger;
   return (
     <section className='hero is-fullheight-with-navbar'>

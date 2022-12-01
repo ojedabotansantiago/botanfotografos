@@ -20,7 +20,7 @@ const query = `query {
     galleryHorsesMainPicture {
       url
       title
-      description      
+      description
     }
   }
 }`;
