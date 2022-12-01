@@ -4,14 +4,27 @@ export interface MainPictureData {
     data:
     {
       homeData: {
+        pageHomeData: {
+          title: string;
+          subtitle: string;
+        };
         sys: {
           id: string;
         },
         pictureData: {
-          url: string,
-          title: string,
-          description: string;
-          mainPictureText: any;
+          mainPictureImage: {
+            url: string,
+            title: string,
+            description: string;
+          };
+
+          mainPictureText: {
+            json: {
+              data: Object,
+              nodeType: string;
+              conten: any[];
+            };
+          };
         };
       };
     };
