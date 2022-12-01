@@ -16,8 +16,6 @@ export class ImageFactory {
     return imageData;
   }
   getAccessGalleryComponent(configOptions: string | undefined): CardAccessGalleriesInterface | undefined {
-    debugger;
-    console.log('configOptions', configOptions);
     if (configOptions === GalleriesTypes.BULLS_GALLERY_TYPE) {
       return this.getBullsCardGalleryData();
     }

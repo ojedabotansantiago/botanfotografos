@@ -5,16 +5,13 @@ import { MainPictureDataInterface } from '../interfaces/HomeImagesInterfacesnter
 
 export default function CardAccessGalleryComponent(imageProps: MainPictureDataInterface) {
   console.log('imageProps', imageProps);
-  debugger;
   const imageFactory = new ImageFactory(imageProps);
   const imageData = imageFactory.getAccessGalleryComponent(imageProps.configOptions);
-
-  const cardTitle = 'my title';
 
   return (
     <div className='card'>
       <header className='card-header is-centered'>
-        <p className='card-header-title has-text-centered is-centered'>{cardTitle}</p>
+        <p className='card-header-title has-text-centered is-centered'>{imageData?.title}</p>
       </header>
       <div className='card-image'>
         <figure className='image is-4by5'>{imageData?.url ? <Image src={imageData.url} alt='Placeholder image' width='480' height='690' /> : ''}</figure>
@@ -22,7 +19,7 @@ export default function CardAccessGalleryComponent(imageProps: MainPictureDataIn
       <div className='card-content'>
         <div className='media'>
           <div className='media-content'>
-            <p className='title is-4'>{cardTitle}</p>
+            <p className='title is-4'>{imageData?.title}</p>
             {/* <<p className='subtitle is-6'>La Pirueta</p>> */}
           </div>
         </div>
