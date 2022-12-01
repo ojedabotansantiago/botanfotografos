@@ -42,7 +42,7 @@ function Home(propsPictureData: MainPictureDataInterface): JSX.Element {
     };
     const configTypeHorses = {
       ...mainPictureData,
-      configOptions: GalleriesTypes.HORSES_GALLERY_TYPES,
+      configOptions: GalleriesTypes.HORSES_GALLERY_TYPE,
     };
     return { configTypeBulls, configTypeHorses };
   }

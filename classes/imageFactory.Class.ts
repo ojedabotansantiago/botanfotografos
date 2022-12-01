@@ -21,7 +21,7 @@ export class ImageFactory {
     if (configOptions === GalleriesTypes.BULLS_GALLERY_TYPE) {
       return this.getBullsCardGalleryData();
     }
-    if (configOptions === GalleriesTypes.HORSES_GALLERY_TYPES) {
+    if (configOptions === GalleriesTypes.HORSES_GALLERY_TYPE) {
       return this.getHorsesCardGalleryData();
     }
 
