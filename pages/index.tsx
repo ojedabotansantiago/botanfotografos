@@ -4,6 +4,7 @@ import HomeImage from '../components/HomeImage';
 import { MainPictureData } from '../interfaces/imageInterface';
 import Image from 'next/image';
 import pirueta from '../public/loading.gif';
+import LoadingComponent from '../components/loadingComponent';
 
 function Home(propsPictureData: MainPictureData): JSX.Element {
   const mainPictureData = propsPictureData;
@@ -16,21 +17,13 @@ function Home(propsPictureData: MainPictureData): JSX.Element {
         <h2 className='subtitle has-text-centered pt-3'>Fotografia para la historia desde 1957.</h2>
 
         <div className='bd-snippet-preview'>
-          {!mainPictureData.mainPicture.errors ? (
-            <HomeImage {...mainPictureData} />
-          ) : (
-            <div>
-              <figure className='image is-128x128'>
-                <Image src={pirueta} alt={''} width='480' height='690' />
-              </figure>
-            </div>
-          )}
+          {!mainPictureData.mainPicture.errors ? <HomeImage {...mainPictureData} /> : <LoadingComponent></LoadingComponent>}
         </div>
       </section>
     </>
   );
 }
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const mainPicture = await getMainPictureSSR();
 
   return { props: { mainPicture } };

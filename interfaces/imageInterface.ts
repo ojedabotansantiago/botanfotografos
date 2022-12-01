@@ -11,6 +11,7 @@ export interface MainPictureData {
           url: string,
           title: string,
           description: string;
+          mainPictureText: any;
         };
       };
     };

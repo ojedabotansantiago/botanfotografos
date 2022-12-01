@@ -1,29 +1,32 @@
 import { fromFetch } from 'rxjs/fetch';
 import { switchMap, of, catchError, take } from 'rxjs';
 import { urlBase, dataHeaders } from '../const/servicesConst';
-import { ErrorLoadImagData, MainPictureData } from '../interfaces/imageInterface';
 const query = `query {
-  homeData(id: "2TghW1Qc8Bf6qG6gxe9OYP") {
-    sys {
-      id
-    },
-    mainPictureImage {
-      url
-      title
-      description
-    },
-    galleryBullsMainPicture{
-      url
-      title
-      description
-    },
-    galleryHorsesMainPicture {
-      url
-      title
-      description
+    homeData(id: "2TghW1Qc8Bf6qG6gxe9OYP") {
+      sys {
+        id
+      },
+      mainPictureImage {
+        url
+        title
+        description
+      },
+      galleryBullsMainPicture{
+        url
+        title
+        description
+      },
+      galleryHorsesMainPicture {
+        url
+        title
+        description
+      },
+      mainPictureData,
+      mainPictureText{
+        json
+      }
     }
-  }
-}`;
+  }`;
 export async function getMainPicture() {
 
   // Fetch data from external API

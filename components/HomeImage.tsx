@@ -3,11 +3,13 @@ import 'bulma/css/bulma.css';
 import React from 'react';
 import { MainPictureData } from '../interfaces/imageInterface';
 import { ImageFactory } from '../classes/imageFactory.Class';
+import ContentFullRichTextComponent from '../components/contentFullRichTextComponent';
 
 export default function HomeImage(imageProps: MainPictureData): JSX.Element {
   const imageFactory = new ImageFactory(imageProps);
   const imageData = imageFactory.getMainImageData();
-  debugger;
+  const richText = imageData.mainPictureText.json;
+
   return (
     <section className='hero is-fullheight-with-navbar'>
       <div className='container'>
@@ -26,17 +28,13 @@ export default function HomeImage(imageProps: MainPictureData): JSX.Element {
                     {/* <<p className='subtitle is-6'>La Pirueta</p>> */}
                   </div>
                 </div>
-
-                <div className='content'>
-                  <p>
-                    Fotografia de Fernado Botan Mon. <a>Plaza de Sevilla</a>
-                  </p>
-                  <p>
-                    Ganadora del world press Photo del <time dateTime='1972-04-14'>14-04-1972</time>
-                  </p>
-
-                  <time dateTime='1972-04-14'>14-04-1972</time>
-                </div>
+                {richText ? (
+                  <div className='content'>
+                    <ContentFullRichTextComponent {...richText} />
+                  </div>
+                ) : (
+                  ''
+                )}
               </div>
             </div>
           </div>

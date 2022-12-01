@@ -10,7 +10,8 @@ export class ImageFactory {
     const imageData = {
       title: this.imageDataFromServer?.mainPicture?.data.homeData.mainPictureImage.title,
       url: this.imageDataFromServer?.mainPicture?.data?.homeData?.mainPictureImage?.url,
-      description: this.imageDataFromServer?.mainPicture?.data?.homeData?.mainPictureImage?.description
+      description: this.imageDataFromServer?.mainPicture?.data?.homeData?.mainPictureImage?.description,
+      mainPictureText: this.imageDataFromServer?.mainPicture?.data?.homeData?.mainPictureText
     };
     return imageData;
   }
