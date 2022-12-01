@@ -3,7 +3,7 @@ import 'bulma/css/bulma.css';
 import React from 'react';
 import { MainPictureData } from '../interfaces/imageInterface';
 import { ImageFactory } from '../classes/imageFactory.Class';
-import ContentFullRichTextComponent from '../components/contentFullRichTextComponent';
+import ContentFullRichTextComponent from './contentFullRichTextComponent';
 
 export default function HomeImage(imageProps: MainPictureData): JSX.Element {
   const imageFactory = new ImageFactory(imageProps);
