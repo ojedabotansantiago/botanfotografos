@@ -21,7 +21,7 @@ const query = `query {
         title
         description
       },
-      mainPictureData,
+      pageHomeData,
       mainPictureText{
         json
       }
