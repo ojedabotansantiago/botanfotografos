@@ -29,6 +29,9 @@ function Home(propsPictureData: MainPictureDataInterface): JSX.Element {
             <div className='column'>
               {!mainPictureData.mainPicture.errors ? <CardAccessGalleryComponent {...configTypeHorses} /> : <LoadingComponent></LoadingComponent>}
             </div>
+            <div className='column'>
+              {!mainPictureData.mainPicture.errors ? <CardAccessGalleryComponent {...configTypeHorses} /> : <LoadingComponent></LoadingComponent>}
+            </div>
           </div>
         </section>
       </section>

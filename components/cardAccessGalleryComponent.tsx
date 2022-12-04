@@ -2,12 +2,26 @@ import Image from 'next/image';
 import 'bulma/css/bulma.css';
 import { ImageFactory } from '../classes/imageFactory.Class';
 import { MainPictureDataInterface } from '../interfaces/HomeImagesInterfaces';
+import CustomLink from './customLink';
+import { GalleriesTypes } from '../utils/enumsGallery';
 
 export default function CardAccessGalleryComponent(imageProps: MainPictureDataInterface) {
   console.log('imageProps', imageProps);
   const imageFactory = new ImageFactory(imageProps);
   const imageData = imageFactory.getAccessGalleryComponent(imageProps.configOptions);
+  let link = getLink(imageProps.configOptions);
+  function getLink(urlNavigate: string | undefined) {
+    let link = '/galleries/bullsGallery';
+    if (urlNavigate === GalleriesTypes.BULLS_GALLERY_TYPE) {
+      return '/galleries/bullsGallery';
+    }
+    if (urlNavigate === GalleriesTypes.HORSES_GALLERY_TYPE) {
+      return '/galleries/horsesGallery';
+    }
+    return '/';
+  }
 
+  debugger;
   return (
     <div className='card'>
       <header className='card-header is-centered'>
@@ -19,20 +33,18 @@ export default function CardAccessGalleryComponent(imageProps: MainPictureDataIn
       <div className='card-content'>
         <div className='media'>
           <div className='media-content'>
-            <p className='title is-4'>{imageData?.title}</p>
+            {/*  <p className='title is-4'>{imageData?.title}</p> */}
             {/* <<p className='subtitle is-6'>La Pirueta</p>> */}
+            <div className='content'>{imageData?.description}</div>
           </div>
         </div>
       </div>
       <footer className='card-footer'>
         <p className='card-footer-item'>
           <span>
-            View on <a href='https://twitter.com/codinghorror/status/506010907021828096'>Twitter</a>
-          </span>
-        </p>
-        <p className='card-footer-item'>
-          <span>
-            Share on <a href='#'>Facebook</a>
+            <CustomLink className='navbar-item' href={link}>
+              Entrar a galeria
+            </CustomLink>
           </span>
         </p>
       </footer>
